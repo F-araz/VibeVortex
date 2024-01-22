@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Music Player</title>
+    <!-- Link to your main stylesheet, additional styles, or CDN links -->
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>VibeVortex</h1>
+
+    <!-- HTML5 Audio Player -->
+    <audio controls id="audioPlayer">
+        <source id="audioSource" src="" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Playlist -->
+    <ul class="playlist">
+        <% songs.forEach(song => { %>
+            <li class="playlist-item" data-song-file="<%= song.file %>">
+                <span><%= song.title %> - <%= song.artist %></span>
+                <button class="delete-song" data-song-id="<%= song._id %>">Delete</button>
+            </li>
+        <% }) %>
+    </ul>
+
+    <!-- Additional features (shuffle, repeat, etc.) can be added here -->
+
+</div>
+
+<!-- Link to your main JavaScript file -->
+<script src="/js/main.js"></script>
+
+</body>
+</html>
