@@ -1,0 +1,19 @@
+<%- include('layout', { pageTitle: 'Login' }) %>
+
+<!-- Content specific to the login page -->
+<%- include('partials/messages', { messages: messages }) %>
+
+<div class="container">
+    <h2>Login</h2>
+    <form action="/auth/login" method="POST">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit">Login</button>
+    </form>
+
+    <p>Don't have an account? <a href="/auth/register">Register</a></p>
+</div>
